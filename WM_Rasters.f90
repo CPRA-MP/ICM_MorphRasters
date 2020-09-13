@@ -56,15 +56,15 @@ program main
     allocate(z(nras))
     
     
-    open(unit=100, file = trim(adjustL(x_bin_pth)),form='unformatted')
+    open(unit=100, file = trim(adjustL(x_bin_pth)))
     read(100,*) x
     close(100)
 
-    open(unit=101, file = trim(adjustL(y_bin_pth)),form='unformatted')
+    open(unit=101, file = trim(adjustL(y_bin_pth)))
     read(101,*) y
     close(101)
     
-    open(unit=102, file = trim(adjustL(z_bin_pth)),form='unformatted')
+    open(unit=102, file = trim(adjustL(z_bin_pth)))
     read(102,*) z
     close(102)
     
