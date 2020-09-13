@@ -41,6 +41,7 @@ program main
     real(sp),dimension(:),allocatable :: z
     integer :: nras
     real(sp) :: rasval
+    integer :: i
     
     call GET_COMMAND_ARGUMENT(1,xyz_asc_pth)
     call GET_COMMAND_ARGUMENT(2,x_bin_pth)
@@ -73,9 +74,13 @@ program main
     
     open(unit=200, file = trim(adjustL(xyz_asc_pth)))
     if(dtype == 'int') then
-        write(200,2000) x,y,z
+        do i=1,nras
+            write(200,2000) x(i),y(i),z(i)
+        end do
     else if (dtype =='flt') then
-        write(200,2001) x,y,z
+        do i=1,nras
+            write(200,2001) x(i),y(i),z(i)
+        end do
     end if
     close(200)
     
