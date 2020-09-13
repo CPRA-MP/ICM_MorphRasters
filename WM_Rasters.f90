@@ -43,9 +43,9 @@ program main
     real(sp) :: rasval
     
     call GET_COMMAND_ARGUMENT(1,xyz_asc_pth)
-    call GET_COMMAND_ARGUMENT(3,x_bin_pth)
-    call GET_COMMAND_ARGUMENT(4,y_bin_pth)
-    call GET_COMMAND_ARGUMENT(2,z_bin_pth)
+    call GET_COMMAND_ARGUMENT(2,x_bin_pth)
+    call GET_COMMAND_ARGUMENT(3,y_bin_pth)
+    call GET_COMMAND_ARGUMENT(4,z_bin_pth)
     call GET_COMMAND_ARGUMENT(5,dtype)
     call GET_COMMAND_ARGUMENT(6,nras_str)
     
@@ -55,6 +55,9 @@ program main
     allocate(y(nras))
     allocate(z(nras))
     
+    write(*,*) 'x file:', trim(adjustL(x_bin_pth))
+    write(*,*) 'y file:', trim(adjustL(y_bin_pth))
+    write(*,*) 'z file:', trim(adjustL(z_bin_pth))
     
     open(unit=100, file = trim(adjustL(x_bin_pth)),form='unformatted')
     read(100) x
