@@ -56,9 +56,9 @@ program main
     allocate(y(nras))
     allocate(z(nras))
     
-    write(*,*) 'x file:', trim(adjustL(x_bin_pth))
-    write(*,*) 'y file:', trim(adjustL(y_bin_pth))
-    write(*,*) 'z file:', trim(adjustL(z_bin_pth))
+    write(*,'(a,a)') 'x file:', trim(adjustL(x_bin_pth))
+    write(*,'(a,a)') 'y file:', trim(adjustL(y_bin_pth))
+    write(*,'(a,a)') 'z file:', trim(adjustL(z_bin_pth))
     
     open(unit=100, file = trim(adjustL(x_bin_pth)),form='unformatted')
     read(100) x
