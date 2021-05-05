@@ -9,9 +9,9 @@
 !   Command line arguments passed into this executable:
 !
 !   1 = xyz_asc_pth : full path to XYZ file that will be saved by this program
-!   3 = x_bin_pth   : full path to binary output file from ICM-Morph that saved array of X-coordinates
-!   4 = y_bin_pth   : full path to binary output file from ICM-Morph that saved array of Y-coordinates
-!   2 = z_bin_pth   : full path to binary output file from ICM-Morph that saved array of raster values (Z) to be mapped
+!   2 = x_bin_pth   : full path to binary output file from ICM-Morph that saved array of X-coordinates
+!   3 = y_bin_pth   : full path to binary output file from ICM-Morph that saved array of Y-coordinates
+!   4 = z_bin_pth   : full path to binary output file from ICM-Morph that saved array of raster values (Z) to be mapped
 !   5 = dtype       : data type of Z values must be either 'int' or 'flt'
 !   6 = nras_str    : number of raster pixels of dataset, must match size of binary arrays
 !                                                  
