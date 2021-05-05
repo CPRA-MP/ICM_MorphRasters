@@ -36,12 +36,15 @@ program main
     character*20 :: nras_str
     
     integer,parameter :: sp=selected_real_kind(p=6) 
+    integer,dimension(:),allocatable :: pct_i
     integer,dimension(:),allocatable :: x
     integer,dimension(:),allocatable :: y
     real(sp),dimension(:),allocatable :: z
     integer :: nras
     real(sp) :: rasval
     integer :: i
+    integer :: binsize
+    integer :: pct
     
     call GET_COMMAND_ARGUMENT(1,xyz_asc_pth)
     call GET_COMMAND_ARGUMENT(2,x_bin_pth)
@@ -55,6 +58,12 @@ program main
     allocate(x(nras))
     allocate(y(nras))
     allocate(z(nras))
+    
+    allocate(pct(10))
+    binsize = nras/10
+    do i=1,10
+        pct_i[i] = binsize*i
+    end do
     
     write(*,'(a,a)') 'x file:', trim(adjustL(x_bin_pth))
     write(*,'(a,a)') 'y file:', trim(adjustL(y_bin_pth))
@@ -73,15 +82,25 @@ program main
     close(102)
     
     open(unit=200, file = trim(adjustL(xyz_asc_pth)))
-    if(dtype == 'int') then
-        do i=1,nras
+    write(*,*) 'writing output ',xyz_asc_path
+    pct = 0
+    write(*,'(2I,A)',) pct,'% ...'
+    
+    do i=1,nras
+        
+        if(dtype == 'int') then
             write(200,2000) x(i),y(i),z(i)
-        end do
-    else if (dtype =='flt') then
-        do i=1,nras
+        else if (dtype =='flt') then
             write(200,2001) x(i),y(i),z(i)
-        end do
-    end if
+        end if
+            
+        if ( ANY(pct_i == i) ) then
+            pct = pct + 10
+            write(*,'(2I,A)',) pct,'% ...'
+        end if
+        
+    end do
+    
     close(200)
     
 2000 format(I0,',',I0,',',I0)
