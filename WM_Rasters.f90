@@ -84,7 +84,7 @@ program main
     open(unit=200, file = trim(adjustL(xyz_asc_pth)))
     write(*,*) 'writing output ',xyz_asc_path
     pct = 0
-    write(*,'(2I,A)',) pct,'% ...'
+    write(*,'(2I,A)') pct,'% ...'
     
     do i=1,nras
         
