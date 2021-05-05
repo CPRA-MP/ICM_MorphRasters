@@ -96,7 +96,7 @@ program main
             
         if ( ANY(pct_i == i) ) then
             pct = pct + 10
-            write(*,'(2I,A)',) pct,'% ...'
+            write(*,'(2I,A)') pct,'% ...'
         end if
         
     end do
