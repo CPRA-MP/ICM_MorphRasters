@@ -59,7 +59,7 @@ program main
     allocate(y(nras))
     allocate(z(nras))
     
-    allocate(pct(10))
+    allocate(pct_i(10))
     binsize = nras/10
     do i=1,10
         pct_i[i] = binsize*i
