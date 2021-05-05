@@ -83,7 +83,7 @@ program main
     close(102)
     
     open(unit=200, file = trim(adjustL(xyz_asc_pth)))
-    write(*,*) 'writing output ',xyz_asc_path
+    write(*,'(A,A)') 'writing output ',trim(adjustL(xyz_asc_pth))
     pct = 0
     write(*,'(2I,A)') pct,'% ...'
     
