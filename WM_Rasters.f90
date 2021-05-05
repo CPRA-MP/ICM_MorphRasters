@@ -60,9 +60,10 @@ program main
     allocate(z(nras))
     
     allocate(pct_i(10))
+    
     binsize = nras/10
     do i=1,10
-        pct_i[i] = binsize*i
+        pct_i(i) = binsize*i
     end do
     
     write(*,'(a,a)') 'x file:', trim(adjustL(x_bin_pth))
