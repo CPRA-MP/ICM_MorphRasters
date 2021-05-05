@@ -85,7 +85,7 @@ program main
     open(unit=200, file = trim(adjustL(xyz_asc_pth)))
     write(*,'(A,A)') 'writing output ',trim(adjustL(xyz_asc_pth))
     pct = 0
-    write(*,'(2I,A)') pct,'% ...'
+    write(*,'(I2,A)') pct,'% ...'
     
     do i=1,nras
         
@@ -97,7 +97,7 @@ program main
             
         if ( ANY(pct_i == i) ) then
             pct = pct + 10
-            write(*,'(2I,A)') pct,'% ...'
+            write(*,'(I2,A)') pct,'% ...'
         end if
         
     end do
