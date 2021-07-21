@@ -83,11 +83,12 @@ program main
     close(102)
     
     open(unit=200, file = trim(adjustL(xyz_asc_pth)))
-    write(unit=999,'(A,A)') 'writing output ',trim(adjustL(xyz_asc_pth))
-    flush(unit=999)
-    pct = 0
-    write(*,'(I3,A)',ADVANCE='NO') pct,'%... '
+
+    write(*,'(A,A)') 'writing output ',trim(adjustL(xyz_asc_pth))
     
+    pct = 0
+    write(*,'(I3,A)') pct,'%... '
+
     do i=1,nras
         
         if(dtype == 'int') then
@@ -98,8 +99,7 @@ program main
             
         if ( ANY(pct_i == i) ) then
             pct = pct + 10
-            write(unit=999,'(I3,A)',ADVANCE='NO') pct,'%... '
-            flush(unit=999)
+            write(*,'(I3,A)') pct,'%... '
         end if
         
     end do
