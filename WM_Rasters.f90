@@ -83,9 +83,8 @@ program main
     close(102)
     
     open(unit=200, file = trim(adjustL(xyz_asc_pth)))
-
     write(*,'(A,A)') 'writing output ',trim(adjustL(xyz_asc_pth))
-    
+
     pct = 0
     write(*,'(I3,A)') pct,'%... '
 
