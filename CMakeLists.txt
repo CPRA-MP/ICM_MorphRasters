@@ -70,7 +70,7 @@ ENDIF()
 ###########################################################################
 # ICM_Morph
 ###########################################################################
-SET( MORPH morph_rasters_v${ICMMORPH_VERSION_STRING} )
+SET( MORPH morph_rasters_xyz2bin_v${ICMMORPH_VERSION_STRING} )
 ADD_EXECUTABLE( ${MORPH} WM_Rasters_build_binary.f90  )
 
 SET_TARGET_PROPERTIES( ${MORPH} PROPERTIES Fortran_MODULE_DIRECTORY ${CMAKE_BINARY_DIR}/CMakeFiles/mod)
